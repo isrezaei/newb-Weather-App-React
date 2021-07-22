@@ -7,7 +7,7 @@ import PastDate from "../5-FooterPastInformation";
 export default function BodyWeatherApp(props){
     return (
         <div ref={props.Ref} className={'BodyWeatherApp'}>
-                <HeaderSearch Data={props.ApiData}/>
+                <HeaderSearch Data={props.ApiData} SearchAlert={props.SearchAlert}/>
                 <TempIcon Data={props.ApiData}/>
                 <ToDayData Data={props.ApiData}/>
                 <PastDate GoToUpWeatherBody={props.GoToUpWeatherBody}/>

@@ -1,0 +1,79 @@
+@mixin Flex($JustifyContent : center , $AlignItem : center , $Direction){
+  display: flex;
+  justify-content: $JustifyContent;
+  align-items: $AlignItem;
+  flex-direction:$Direction ;
+}
+
+@mixin Glass{
+  backdrop-filter: blur(5px) saturate(150%);
+  -webkit-backdrop-filter: blur(5px) saturate(150%);
+  background-color: rgba(252, 252, 252, 0.54);
+  border: 1px solid rgba(209, 213, 219, 0.3);
+}
+
+.SearchAlert{
+  @include Flex(flex-start , center , column);
+  @include Glass;
+  width: 100%;
+  height: 40rem;
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  transition: .3s;
+
+
+  .Close{
+    @include Flex(center , center , row);
+    width: 2.25rem;
+    height: 2.25rem;
+    border: none;
+    outline: none;
+    border-radius: 100%;
+    transform: translate(130px , 0px);
+    cursor: pointer;
+
+    img{
+      width: 30px;
+      height: 30px;
+      border-radius: 100%;
+    }
+  }
+
+  P{
+    font: {
+      size: 30px;
+      weight: 600;
+    };
+    margin: 3rem 0 1rem 0;
+    color: rgba(0, 79, 100, 0.6);
+  }
+
+  input{
+    width: 80%;
+    height: 2rem;
+    outline: none;
+    border: none;
+    border-radius: 50px;
+    box-sizing: border-box;
+    padding: 1rem;
+  }
+
+  div{
+    @include Flex(center , center , row);
+    width: 3rem;
+    height: 3rem;
+    border: none;
+    outline: none;
+    margin: .75rem 0;
+    background: #ffffff;
+    border-radius: 100%;
+    cursor: pointer;
+
+    img{
+      width: 35px;
+      height: 35px;
+
+    }
+  }
+}

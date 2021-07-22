@@ -21,6 +21,7 @@ time, mark, audio, video , input {
 
 //--------
 @import "ForecastToday";
+@import "SearchAlert";
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
 
 //--------
@@ -75,6 +76,7 @@ body{
   @include Centerin;
   width: 20rem;
   height: 40rem;
+  position: absolute;
   box-shadow: none;
 
   transition: .5s;
