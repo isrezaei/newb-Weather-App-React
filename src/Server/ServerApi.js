@@ -9,7 +9,6 @@ async function GetData(City){
             "x-rapidapi-host": "weatherapi-com.p.rapidapi.com"
         }
     })
-
     if (Data.status !== 400){
         return await Data.json()
     }

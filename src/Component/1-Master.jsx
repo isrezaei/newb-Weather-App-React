@@ -5,6 +5,7 @@ import ForecastData from "../Server/ForecastApi";
 import ForecastToday from "./Forecast/ForecastToday";
 import BodyWeatherApp from "./Forecast/BodyWeatherApp";
 import SearchAlert from "./SearchAlert";
+import NotFound from "./NotFound";
 
 
 export default class Master extends Component {
@@ -25,8 +26,8 @@ export default class Master extends Component {
 
     componentDidMount(){
         // setInterval(()=>{
-            GetData(this.state.UserChose).then(Data => this.setState({Data}))
-            ForecastData().then(ForeCast => this.setState({ForeCast}))
+        GetData(this.state.UserChose).then(Data => this.setState({Data}))
+        ForecastData().then(ForeCast => this.setState({ForeCast}))
         // },1000)
     }
 
@@ -34,6 +35,13 @@ export default class Master extends Component {
         if (prevState.UserChose !== this.state.UserChose){
             GetData(this.state.UserChose).then(Data => this.setState({Data}))
             ForecastData().then(ForeCast => this.setState({ForeCast}))
+
+            if (this.state.Data === 400){
+                this.setState({
+                    UserChose : 'Tehran'
+                })
+            }
+
         }
         return null
     }
@@ -64,10 +72,11 @@ export default class Master extends Component {
         this.setState({
             UserChose : City
         })
-        return(
-            this.Search.current.style.zIndex ='-1',
+            return(
+                this.Search.current.style.zIndex ='-1',
                 this.Search.current.style.opacity ='0'
-        )
+            )
+
     }
 
     CloseSearch = () => {
@@ -89,18 +98,20 @@ export default class Master extends Component {
         console.log(this.state.UserChose)
 
         if (this.state.Data !== 400){
-
             return (
                 <div className={'ParentWeather'}>
                     {this.state.Data && <ForecastToday Ref={this.ForecastToday} ApiData={this.state.Data} BackToWeatherBody={this.BackToWeatherBody}/>}
                     {this.state.Data && <BodyWeatherApp Ref={this.BodyWeatherApp} ApiData={this.state.Data} GoToUpWeatherBody={this.GoToWeatherBody} SearchAlert={this.SearchAlert}/>}
-                    <SearchAlert RefSearch={this.Search} CloseSearch={this.CloseSearch} UserCityChose={this.UserCityChose}/>
+                    <SearchAlert RefSearch={this.Search} CloseSearch={this.CloseSearch} UserCityChose={this.UserCityChose} Data={this.state.Data}/>
                 </div>
-
             )
-        }else {
-            alert('Error')
         }
+        else {
+          return <NotFound UserChose={this.state.UserChose}/>
+        }
+
+
+
 
     }
 }

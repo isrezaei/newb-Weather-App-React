@@ -1,0 +1,81 @@
+@mixin NeumorphismBody(){
+  background: #ffffff;
+  -webkit-box-shadow: 0px 0px 16px -8px rgba(0,0,0,0.38);
+  box-shadow: 0px 0px 16px -8px rgba(0,0,0,0.38);
+}
+@mixin Centerin{
+  position: absolute;
+  top : 50%;
+  left: 50%;
+  transform: translate(-50% , -50%);
+}
+@mixin Flex($JustifyContent : center , $AlignItem : center , $Direction){
+  display: flex;
+  justify-content: $JustifyContent;
+  align-items: $AlignItem;
+  flex-direction:$Direction ;
+}
+
+
+.NotFound{
+
+    @include NeumorphismBody;
+    @include Centerin;
+    width: 20rem;
+    height: 40rem;
+    position: absolute;
+    transition: .5s;
+    overflow: hidden;
+
+  .Image404{
+    width: 100%;
+    height: auto;
+    margin-top: 6rem;
+
+    img{
+      width: 100%;
+      height: 262px;
+      transform: scale(1.3);
+    }
+  }
+
+  .Text404{
+    @include Flex(center , center , column);
+    width: 100%;
+    height: auto;
+
+    margin-top: 3rem;
+  }
+  p{
+    color: #565656;
+    text-align: center;
+    font: {
+      size: 18px;
+    };
+    margin: .5rem 0;
+    b{
+      color: #ff7043;
+      font: {
+        weight: 600;
+        size: 25px;
+      };
+    }
+  }
+
+  button{
+    @include Flex(center , center , row);
+    width: 40px;
+    height: 40px;
+    margin-top: .5rem;
+    background: white;
+    border: 3px solid #7dd0d7;
+    outline: none;
+    border-radius: 100%;
+    cursor: pointer;
+    img{
+      width: 25px;
+      height: 25px;
+      border-radius: 100%;
+    }
+  }
+}

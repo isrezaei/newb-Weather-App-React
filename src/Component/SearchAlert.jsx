@@ -5,9 +5,12 @@ export default class SearchAlert extends Component{
         super(props);
 
         this.state={
-            Input : 'Search ...'
+            Input : 'Search ...' ,
+            Error400 : this.props.Data,
+            City : ''
         }
     }
+
 
     RemoveFirstTextInput = () =>{
 
@@ -31,6 +34,7 @@ export default class SearchAlert extends Component{
 
 
     render() {
+
         return (
             <div ref={this.props.RefSearch} className={'SearchAlert'}>
 
@@ -39,11 +43,13 @@ export default class SearchAlert extends Component{
                 </div>
 
                 <p>Enter Your City</p>
-                <input spellcheck="false" onClick={this.RemoveFirstTextInput} onChange={this.HandelChange} value={this.state.Input}/>
+                <input spellCheck={false} onClick={this.RemoveFirstTextInput} onChange={this.HandelChange} value={this.state.Input}/>
 
                     <div onClick={this.SearchButton}>
                         <img src='../Icon/icons8-search%20(1).gif'/>
                     </div>
+
+                {this.state.Error400 === 400 ? <span>Error</span> : null }
 
             </div>
         )
