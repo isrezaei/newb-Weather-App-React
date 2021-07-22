@@ -1,0 +1,119 @@
+@mixin Flex($JustifyContent : center , $AlignItem : center , $Direction){
+  display: flex;
+  justify-content: $JustifyContent;
+  align-items: $AlignItem;
+  flex-direction:$Direction ;
+}
+
+@mixin NeumorphismBody(){
+  background: linear-gradient(0deg, #cacaca, #f0f0f0);
+}
+
+
+
+@mixin Centerin{
+  position: absolute;
+  top : 50%;
+  left: 50%;
+  transform: translate(-50% , 50%);
+}
+::-webkit-scrollbar-track {
+  @include NeumorphismBody
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 100px;
+  background-image: -webkit-gradient(linear,
+          left bottom,
+          left top,
+          color-stop(0.44, rgb(122,153,217)),
+          color-stop(0.72, rgb(73,125,189)),
+          color-stop(0.86, rgb(52, 88, 205)));
+}
+
+
+
+
+
+
+
+
+.BodyForecast{
+  @include Centerin;
+  @include NeumorphismBody;
+  width: 20rem;
+  height: 40rem;
+  text-align: center;
+  transition: .5s;
+  overflow : {
+    x : hidden;
+    y: scroll;
+  }
+
+  .BackToWeatherBody{
+    @include Flex(space-between , center , row);
+    width: 100%;
+    height: 3rem;
+    box-sizing: border-box;
+    padding: 0 1rem;
+    margin: .25rem 0;
+    color: rgba(0, 3, 24, 0.6);
+
+    p{
+      font: {
+        size: 25px;
+        weight: 600;
+      };
+    }
+  }
+
+  button{
+    width: 30px;
+    height: 30px;
+    background: #6e98b3;
+    border-radius: 100%;
+    outline: none;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+.ForecastToday{
+  @include Flex(center , center , row);
+  width: 100%;
+  height: auto;
+  //background: #6e98b3;
+  box-sizing: border-box;
+  color: rgba(0, 6, 172, 0.5);
+
+
+  .Time{
+    @include Flex(center , center , row);
+    width: 4rem;
+    height: 4rem;
+    border-radius: 100%;
+    margin:0 1rem;
+    font: {
+      size: 18px;
+      weight: 600;
+    };
+  }
+
+  .Icon{
+    @extend .Time;
+
+    img{
+      width: 60px;
+      height: 60px;
+      opacity: 0.8;
+    }
+  }
+
+  .Temp{
+    @extend .Icon
+  }
+}
+
+

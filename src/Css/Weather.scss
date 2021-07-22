@@ -1,0 +1,261 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video , input {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+//--------
+@import "ForecastToday";
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+
+//--------
+
+@mixin Flex($JustifyContent : center , $AlignItem : center , $Direction){
+  display: flex;
+  justify-content: $JustifyContent;
+  align-items: $AlignItem;
+  flex-direction:$Direction ;
+}
+
+@mixin NeumorphismBody(){
+  background: linear-gradient(170deg, #cccccc, #f3f3f3);
+  box-shadow:  5px 5px 25px #cccccc,
+  -5px -5px 25px #fafafa;
+}
+
+@mixin NeumorphismIcon(){
+  background: linear-gradient(145deg, #ffffff, #f3f3f3);
+  box-shadow:  5px 5px 15px #c3c3c3,
+  -5px -5px 15px #ffffff;
+}
+
+@mixin Centerin{
+  position: absolute;
+  top : 50%;
+  left: 50%;
+  transform: translate(-50% , -50%);
+}
+
+//--------
+
+body{
+  font-family: 'PT Sans', sans-serif;
+  background: #e3e3e3;
+}
+
+//--------
+
+.ParentWeather{
+  @include Centerin;
+  @include NeumorphismBody;
+  width: 20rem;
+  height: 40rem;
+  overflow: hidden;
+}
+
+//--------
+
+.BodyWeatherApp{
+  @include NeumorphismBody;
+  @include Centerin;
+  width: 20rem;
+  height: 40rem;
+  box-shadow: none;
+
+  transition: .5s;
+  overflow: hidden;
+
+}
+
+//--------
+
+.Headersearch{
+  @include Flex(space-between , center , row);
+  width: 100%;
+  height: 5rem;
+  //background: aquamarine;
+  margin: {left: auto ; right: auto ; top: .5rem ; bottom: 0;};
+  padding: 0 1rem;
+  box-sizing : border-box;
+  position: absolute;
+  z-index: 1;
+
+  .City{
+    font: {
+      size: 30px;
+    };
+  }
+  .Time{
+    font: {
+      size: 17px;
+    };
+  }
+.Search{
+  @include Flex(center , center , row);
+  width: 35px;
+  height: 35px;
+  border-radius: 100%;
+  cursor: pointer;
+
+  img{
+    width: 30px;
+    height: 30px;
+  }
+
+}
+
+}
+
+//--------
+
+.TempInfo{
+  width: 100%;
+  height: 19rem;
+  margin: auto;
+  background: rgba(19, 195, 226, 0.4);
+  clip-path: circle(87.5% at 50% 0);
+  @include Flex(center , center , column);
+
+  .IconeTemp{
+    width: 90%;
+    height: auto;
+    margin-top: 1%;
+    //background: #d6d6f6;
+    @include Flex(space-around , center , row);
+
+    .Icone {
+      @include Flex(center , center , column);
+      img{
+        transform: scale(1);
+      }
+    }
+
+    .Info{
+      :nth-child(1){
+        font: {
+          size: 45px;
+        };
+      }
+
+      :nth-child(2){
+        font: {
+          size: 20px;
+        };
+      }
+    }
+  }
+}
+
+//--------
+
+.ToDayData{
+  width: 100%;
+  height: auto;
+  margin: auto;
+  //background: gold;
+  transform: translateY(-45px);
+  @include Flex(space-around , center , row);
+
+  .Temp{
+    width: 5rem;
+    height: 6rem;
+    //background: red;
+    @include Flex(center , center , column);
+
+    div{
+      width: 50px;
+      height: 50px;
+      border-radius: 100%;
+      border: 3px solid cornflowerblue;
+      @include Flex(center , center , row);
+      @include NeumorphismIcon
+    }
+    img{
+      width: 40px;
+      height: 40px;
+      border-radius: 100%;
+    }
+    p{
+      font: {
+        size: 15px;
+      };
+      margin: .25rem 0;
+    }
+  }
+
+  .WindSpeed{
+    @extend .Temp;
+    transform: translateY(-20px);
+
+    img{
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 3px solid cornflowerblue;
+    }
+    p{
+      font: {
+        size: 15px;
+      };
+      margin: .25rem 0;
+    }
+
+
+  }
+  .Rainy{
+   @extend .Temp;
+  }
+}
+
+//--------
+
+.SunPosition{
+  @include Flex(space-around , center , row) ;
+  width: 100%;
+  height: auto;
+  transform: translateY(-30px);
+
+  .Sunrise{
+    @include Flex(center , center , column) ;
+    @include NeumorphismIcon;
+    width: 8rem;
+    background: #fbf4d1;
+    border-radius: 50px;
+    color: #b09433;
+    font: {
+      size: 15px;
+    };
+
+  }
+
+  .Sunset{
+    @extend .Sunrise;
+    background: #ecf8ff;
+    color: #6e98b3;
+  }
+
+}
+
+//--------
+
+.Past{
+  width: 60rem;
+  height: 5rem;
+  background: #6e98b3;
+}
