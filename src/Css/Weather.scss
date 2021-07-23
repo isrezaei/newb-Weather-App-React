@@ -62,72 +62,6 @@ body{
 
 //--------
 
-@media all and (min-width: 320px) and (max-width: 600px){
-  .ParentWeather{
-    @include Centerin;
-    @include NeumorphismBody;
-    width: 100%!important;
-    height: 100vh!important;
-    overflow: hidden;
-  }
-
-  //--------
-
-  .BodyWeatherApp{
-    @include NeumorphismBody;
-    @include Centerin;
-    width: 100%!important;
-    height: 100vh!important;
-    position: absolute;
-    box-shadow: none;
-    transition: .5s;
-    overflow: hidden;
-  }
-
-  .TempInfo{
-    width: 100%;
-    height: 19rem;
-    margin: auto;
-    background: rgba(19, 195, 226, 0.4);
-    clip-path: circle(87.5% at 50% 0);
-    @include Flex(center , center , column);
-
-    .IconeTemp{
-      width: 90%;
-      height: auto;
-      margin-top: 1%;
-      //background: #d6d6f6;
-      @include Flex(space-around , center , row);
-
-      .Icone {
-        @include Flex(center , center , column);
-        img{
-          transform: scale(1);
-        }
-      }
-
-      .Info{
-        :nth-child(1){
-          font: {
-            size: 45px;
-          };
-        }
-
-        :nth-child(2){
-          font: {
-            size: 20px;
-          };
-        }
-      }
-    }
-  }
-
-}
-
-
-
-
-
 
 
 
@@ -208,7 +142,8 @@ body{
   width: 100%;
   height: 19rem;
   margin: auto;
-  background: rgba(19, 195, 226, 0.4);
+  background: #cbe3a8;
+  transition: 3s;
   clip-path: circle(87.5% at 50% 0);
   @include Flex(center , center , column);
 
@@ -222,7 +157,8 @@ body{
     .Icone {
       @include Flex(center , center , column);
       img{
-        transform: scale(1);
+        transform: scale(1.5);
+        filter: blur();
       }
     }
 
@@ -335,8 +271,25 @@ body{
 
 //--------
 
-.Past{
-  width: 60rem;
-  height: 5rem;
-  background: #6e98b3;
+.ParentPast{
+  @include Flex(center , center , column);
+  width: 100%;
+  height: auto;
+
+
+  .Past{
+    width: 60rem;
+    height: 6rem;
+    background: #6e98b3;
+    margin-top: 2rem;
+  }
+
+  button{
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    cursor: pointer;
+  }
+
 }
+

@@ -6,8 +6,6 @@ export default class SearchAlert extends Component{
 
         this.state={
             Input : 'Search ...' ,
-            Error400 : this.props.Data,
-            City : ''
         }
     }
 
@@ -43,13 +41,12 @@ export default class SearchAlert extends Component{
                 </div>
 
                 <p>Enter Your City</p>
+
                 <input spellCheck={false} onClick={this.RemoveFirstTextInput} onChange={this.HandelChange} value={this.state.Input}/>
 
                     <div onClick={this.SearchButton}>
                         <img src='../Icon/icons8-search%20(1).gif'/>
                     </div>
-
-                {this.state.Error400 === 400 ? <span>Error</span> : null }
 
             </div>
         )

@@ -1,7 +1,7 @@
 import React, {Component, createRef} from "react";
 import '../Css/Weather.css'
 import GetData from "../Server/ServerApi";
-import ForecastData from "../Server/ForecastApi";
+import ForeCast from "../Server/ForeCast";
 import ForecastToday from "./Forecast/ForecastToday";
 import BodyWeatherApp from "./Forecast/BodyWeatherApp";
 import SearchAlert from "./SearchAlert";
@@ -21,26 +21,25 @@ export default class Master extends Component {
         this.ForecastToday = React.createRef()
         this.BodyWeatherApp = React.createRef()
         this.Search = React.createRef()
+        this.ColorTempInfo = React.createRef()
 
     }
 
     componentDidMount(){
         // setInterval(()=>{
+
         GetData(this.state.UserChose).then(Data => this.setState({Data}))
-        ForecastData().then(ForeCast => this.setState({ForeCast}))
+        ForeCast(this.state.ForeCast).then(ForeCast => this.setState({ForeCast}))
+
         // },1000)
+
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
         if (prevState.UserChose !== this.state.UserChose){
-            GetData(this.state.UserChose).then(Data => this.setState({Data}))
-            ForecastData().then(ForeCast => this.setState({ForeCast}))
 
-            if (this.state.Data === 400){
-                this.setState({
-                    UserChose : 'Tehran'
-                })
-            }
+            GetData(this.state.UserChose).then(Data => this.setState({Data}))
+            ForeCast(this.state.UserChose).then(ForeCast => this.setState({ForeCast}))
 
         }
         return null
@@ -92,16 +91,16 @@ export default class Master extends Component {
 
     render() {
 
-        {this.state.Data && console.log(this.state.Data)}
-        // {this.state.ForeCast && console.log(this.state.ForeCast)}
+        // {this.state.Data && console.log(this.state.Data)}
+        {this.state.ForeCast && console.log(this.state.ForeCast)}
 
-        console.log(this.state.UserChose)
+
 
         if (this.state.Data !== 400){
             return (
                 <div className={'ParentWeather'}>
                     {this.state.Data && <ForecastToday Ref={this.ForecastToday} ApiData={this.state.Data} BackToWeatherBody={this.BackToWeatherBody}/>}
-                    {this.state.Data && <BodyWeatherApp Ref={this.BodyWeatherApp} ApiData={this.state.Data} GoToUpWeatherBody={this.GoToWeatherBody} SearchAlert={this.SearchAlert}/>}
+                    {this.state.Data && <BodyWeatherApp Ref={this.BodyWeatherApp} RefColorTempInfo={this.ColorTempInfo} ApiData={this.state.Data} GoToUpWeatherBody={this.GoToWeatherBody} SearchAlert={this.SearchAlert}/>}
                     <SearchAlert RefSearch={this.Search} CloseSearch={this.CloseSearch} UserCityChose={this.UserCityChose} Data={this.state.Data}/>
                 </div>
             )
@@ -109,9 +108,5 @@ export default class Master extends Component {
         else {
           return <NotFound UserChose={this.state.UserChose}/>
         }
-
-
-
-
     }
 }
