@@ -1,0 +1,122 @@
+@mixin Flex($JustifyContent : center , $AlignItem : center , $Direction){
+  display: flex;
+  justify-content: $JustifyContent;
+  align-items: $AlignItem;
+  flex-direction:$Direction ;
+}
+
+@mixin NeumorphismBody(){
+  background: linear-gradient(170deg, #cccccc, #f3f3f3);
+  box-shadow:  5px 5px 25px #cccccc,
+  -5px -5px 25px #fafafa;
+}
+
+@mixin NeumorphismIcon(){
+  background: linear-gradient(145deg, #ffffff, #f3f3f3);
+  box-shadow:  5px 5px 15px #c3c3c3,
+  -5px -5px 15px #ffffff;
+}
+
+@mixin Centerin{
+  position: absolute;
+  top : 50%;
+  left: 50%;
+  transform: translate(-50% , -50%);
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px){
+
+  .ParentWeather{
+    @include Centerin;
+    @include NeumorphismBody;
+    width: 100% !important;
+    height: 100%!important;
+    overflow: hidden;
+  }
+
+  //--------
+
+  .BodyWeatherApp{
+    @include NeumorphismBody;
+    @include Centerin;
+    width: 100%!important;
+    height: 100%!important;
+    position: absolute;
+    box-shadow: none;
+    transition: .5s;
+    overflow: hidden;
+
+  }
+
+  .TempInfo{
+    width: 100%;
+    height: 19rem;
+    margin: auto;
+    background: #cbe3a8;
+    transition: 3s;
+    clip-path: circle(79.7% at 50% 3%)!important;
+    @include Flex(center , center , row);
+
+    .IconeTemp{
+      width: 90%;
+      height: auto;
+      margin-top: 1%;
+      //background: #d6d6f6;
+      @include Flex(space-around , center , row);
+
+      .Icone {
+        @include Flex(center , center , row);
+        img{
+          transform: scale(1.5);
+        }
+      }
+
+      .Info{
+        :nth-child(1){
+          font: {
+            size: 45px;
+          };
+        }
+
+        :nth-child(2){
+          font: {
+            size: 20px;
+          };
+        }
+      }
+    }
+  }
+
+
+  .ToDayData {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    //background: gold;
+    transform: translateY(-30px)!important;
+    @include Flex(space-around, center, row);
+  }
+
+  .SunPosition{
+    @include Flex(space-around , center , row) ;
+    width: 100%;
+    height: auto;
+    transform: translateY(-10px) !important;}
+
+  .SearchAlert {
+    width: 100%;
+    height: 100% !important;
+
+    .Close{
+
+      transform: translate(170px , 0px);
+
+    }
+  }
+
+  }
+
+
+
+
+

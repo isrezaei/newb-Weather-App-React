@@ -1,6 +1,6 @@
 import React , {Component} from 'react'
 
-let Colors = ['#cbe3a8' , '#99e3d9' , '#dcc4fc' , '#d3f1b3' , '#c4ea80' , '#efc1fc']
+let Colors = ['#9eb877' , '#809f98' , '#b398e0' , '#b4de7f' , '#80b3ea' , '#a3d9c3']
 
 export default class TempIcon extends Component{
     constructor(props) {
@@ -24,7 +24,7 @@ export default class TempIcon extends Component{
             })
 
 
-        }.bind(this),800)
+        }.bind(this),600)
 
 
     }
@@ -49,13 +49,13 @@ export default class TempIcon extends Component{
                 <div className={'IconeTemp'}>
 
                     <div className={'Info'}>
-                        <p>{current.temp_c}°</p>
+                        <p>{current.temp_c}°C</p>
                         <p>{condition.text}</p>
                     </div>
 
-                    <div className={'Icone'}>
-                        <img src={condition.icon}/>
-                    </div>
+                    {/*<div className={'Icone'}>*/}
+                    {/*    <img src={condition.icon}/>*/}
+                    {/*</div>*/}
 
 
                 </div>
