@@ -64,6 +64,32 @@ body{
 
 
 
+@media screen and (min-width: 320px) and (max-width: 480px){
+
+  .ParentWeather{
+    @include Centerin;
+    @include NeumorphismBody;
+    width: 100% !important;
+    height: 100%!important;
+    overflow: hidden;
+  }
+
+  //--------
+
+  .BodyWeatherApp{
+    @include NeumorphismBody;
+    @include Centerin;
+    width: 100%!important;
+    height: 100%!important;
+    position: absolute;
+    box-shadow: none;
+    transition: .5s;
+    overflow: hidden;
+
+  }
+
+
+}
 
 
 
@@ -145,7 +171,7 @@ body{
   background: #cbe3a8;
   transition: 3s;
   clip-path: circle(87.5% at 50% 0);
-  @include Flex(center , center , column);
+  @include Flex(center , center , row);
 
   .IconeTemp{
     width: 90%;
@@ -155,7 +181,7 @@ body{
     @include Flex(space-around , center , row);
 
     .Icone {
-      @include Flex(center , center , column);
+      @include Flex(center , center , row);
       img{
         transform: scale(1.5);
         filter: blur();

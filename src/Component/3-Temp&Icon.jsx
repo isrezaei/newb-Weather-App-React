@@ -47,6 +47,7 @@ export default class TempIcon extends Component{
             <div ref={this.props.RefColorTempInfo} className={'TempInfo'}>
 
                 <div className={'IconeTemp'}>
+
                     <div className={'Info'}>
                         <p>{current.temp_c}°</p>
                         <p>{condition.text}</p>
@@ -55,6 +56,8 @@ export default class TempIcon extends Component{
                     <div className={'Icone'}>
                         <img src={condition.icon}/>
                     </div>
+
+
                 </div>
             </div>
         )
