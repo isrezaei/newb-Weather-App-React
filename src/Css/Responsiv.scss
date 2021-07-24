@@ -24,7 +24,7 @@
   transform: translate(-50% , -50%);
 }
 
-@media screen and (min-width: 320px) and (max-width: 480px){
+@media screen and (min-width: 320px) and (max-width: 407px){
 
   .ParentWeather{
     @include Centerin;
@@ -112,6 +112,27 @@
       transform: translate(170px , 0px);
 
     }
+  }
+
+  .BodyForecast{
+    @include Centerin;
+    @include NeumorphismBody;
+    width: 100% !important;
+    height: 100% !important;
+    position: absolute;
+    text-align: center;
+    transition: .5s;
+    overflow : {
+      x : hidden;
+      y: scroll;
+    }
+  }
+
+  .ParentPast{
+    @include Flex(center , center , column);
+    width: 100%;
+    height: auto;
+    transform: translateY(60px) !important;
   }
 
   }
