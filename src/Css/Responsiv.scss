@@ -24,7 +24,7 @@
   transform: translate(-50% , -50%);
 }
 
-@media screen and (min-width: 320px) and (max-width: 410px){
+@media screen and (min-width: 320px) and (max-width: 480px){
 
   .ParentWeather{
     @include Centerin;
