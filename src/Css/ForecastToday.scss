@@ -67,13 +67,21 @@
   }
 
   button{
-    width: 30px;
-    height: 30px;
-    background: #6e98b3;
+    @include Flex(center , center , row);
+    width: 40px;
+    height: 40px;
+    background: #ffffff;
     border-radius: 100%;
     outline: none;
     border: none;
     cursor: pointer;
+
+    img{
+      width: 30px;
+      height: 30px;
+      border-radius: 100px;
+    }
+
   }
 }
 
@@ -83,7 +91,7 @@
   height: auto;
   //background: #6e98b3;
   box-sizing: border-box;
-  color: rgba(0, 6, 172, 0.5);
+  color: rgba(0, 0, 0, 0.5);
 
 
   .Time{

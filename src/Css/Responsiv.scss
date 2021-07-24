@@ -116,7 +116,7 @@
 
   .BodyForecast{
     @include Centerin;
-    @include NeumorphismBody;
+
     width: 100% !important;
     height: 100% !important;
     position: absolute;
@@ -128,6 +128,36 @@
     }
   }
 
+  .ForecastToday{
+    @include Flex(center , center , row);
+    width: auto!important;
+    height: auto;
+
+    box-sizing: border-box;
+
+
+    .Time{
+      @include Flex(center , center , row);
+      width: 8rem;
+      height: 4rem;
+      border-radius: 100%;
+      margin:0 1rem;
+      font: {
+        size: 18px;
+        weight: 600;
+      };
+    }
+
+    .Icon{
+
+      img{
+        width: 50px;
+        height: 50px;
+        opacity: 0.8;
+      }
+    }
+  }
+
   .ParentPast {
     @include Flex(center, center, column);
     width: 100%;
@@ -135,7 +165,7 @@
     transform: translateY(50px) !important;
 
     .Past {
-      @include Flex(space-between, center, row);
+      @include Flex(center, center, row);
       width: 100%;
       height: 10rem;
       overflow: {
@@ -162,12 +192,81 @@
           transform: translate(0px, 0px);
         }
       }
+    }
 
+    button{
+      width: 40px!important;
+      height: 40px!important;
+      margin-top: .5rem;
+      border-radius: 100%;
+      cursor: pointer;
+      outline: none;
+      border: none;
+      background: #ffffff;
+
+      img{
+        width: 25px!important;
+        height: 25px!important;
+        border-radius: 100px;
+      }
 
     }
   }
 
+  .NotFound{
+    @include Centerin;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: .5s;
+    overflow: hidden;
+
+    .Image404{
+      width: 100%;
+      height: auto;
+      margin-top: 6rem;
+
+      img{
+        width: 100%;
+        height: 262px;
+        transform: scale(1.3);
+      }
+    }
+
+    .Text404{
+      @include Flex(center , center , column);
+      width: 100%;
+      height: auto;
+
+      margin-top: 3rem;
+    }
+    p{
+      color: #565656;
+      text-align: center;
+      font: {
+        size: 18px;
+      };
+      margin: .5rem 0;
+    }
+
+    button{
+      @include Flex(center , center , row);
+      width: 40px;
+      height: 40px;
+      background: white;
+      border: 3px solid #7dd0d7;
+      outline: none;
+      border-radius: 100%;
+      cursor: pointer;
+      img{
+        width: 25px;
+        height: 25px;
+        border-radius: 100%;
+      }
+    }
   }
+
+}
 
 
 

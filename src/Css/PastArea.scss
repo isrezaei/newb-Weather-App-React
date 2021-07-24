@@ -24,7 +24,7 @@
     @include Flex(center , center , column);
     width:auto;
     height: 8rem;
-    margin: 0 0.2rem ;
+    margin: 0 0.3rem ;
     border-radius: 12px;
 
     .IconPast{
@@ -55,23 +55,24 @@
         color: rgba(0,0,0,0.4);
         font: {size: 15px ; weight: 600};
       }
-
     }
   }
 
   button{
-    width: 30px;
-    height: 30px;
+    @include Flex(center , center , center);
+    width: 25px;
+    height: 25px;
     margin-top: .5rem;
     border-radius: 100%;
     cursor: pointer;
     outline: none;
     border: none;
-    background: #6e98b3;
+    background: #ffffff;
 
     img{
-      width: 30px;
-      height: 30px;
+      width: 20px;
+      height: 20px;
+      border-radius: 100px;
     }
 
   }

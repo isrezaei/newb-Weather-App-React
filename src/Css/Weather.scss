@@ -93,7 +93,6 @@ body{
   @include Flex(space-between , center , row);
   width: 100%;
   height: 5rem;
-  //background: aquamarine;
   margin: {left: auto ; right: auto ; top: .5rem ; bottom: 0;};
   padding: 0 1rem;
   box-sizing : border-box;
@@ -101,11 +100,13 @@ body{
   z-index: 1;
 
   .City{
+    color: rgba(0, 0, 0, 0.6);
     font: {
       size: 30px;
     };
   }
   .Time{
+    color: rgba(0, 0, 0, 0.6);
     font: {
       size: 17px;
     };
