@@ -1,6 +1,6 @@
 async function ForeCast(City){
 
-    const ForeCast = await fetch("https://weatherbit-v1-mashape.p.rapidapi.com/forecast/daily?lat=35.73&lon=51.33", {
+    const ForeCast = await fetch(`https://weatherbit-v1-mashape.p.rapidapi.com/forecast/daily?lat=${City.lat}&lon=${City.lon}`, {
         "method": "GET",
         "headers": {
             "x-rapidapi-key": "269926aecemsh263311c0955020ep18fd21jsnd518d7a7071a",

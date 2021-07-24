@@ -24,6 +24,8 @@ time, mark, audio, video , input {
 @import "SearchAlert";
 @import "NotFound";
 @import "Responsiv";
+@import "SunSetAndRise";
+@import "PastArea";
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
 
 //--------
@@ -232,105 +234,8 @@ body{
 
 //--------
 
-.SunPosition{
-  @include Flex(space-around , center , row) ;
-  width: 100%;
-  height: auto;
-  transform: translateY(-30px);
 
-  .Sunrise{
-    @include Flex(center , center , column) ;
-    @include NeumorphismIcon;
-    width: 8rem;
-    background: #fbf4d1;
-    border-radius: 50px;
-    color: #b09433;
-    font: {
-      size: 15px;
-    };
-
-  }
-
-  .Sunset{
-    @extend .Sunrise;
-    background: #ecf8ff;
-    color: #6e98b3;
-  }
-
-}
 
 //--------
 
-.ParentPast{
-  @include Flex(center , center , column);
-  width: 100%;
-  height: auto;
-  transform: translateY(-10px);
 
-  .Past{
-    @include Flex(space-between , center , row);
-    width: 100%;
-    height: auto;
-    overflow: {
-      x: scroll;
-      y: hidden;
-    };
-  }
-
-  .Past::-webkit-scrollbar {
-    margin-top: .3rem;
-    height: 5px;
-  }
-  .Past::-webkit-scrollbar-thumb {
-    border-radius: 100px;
-    background: #9eb877;
-    margin-top: .3rem;
-  }
-
-  .ItemPast{
-    @include Flex(center , center , column);
-    width:auto;
-    height: 10rem;
-    margin: 0 .6rem ;
-    border-radius: 50px;
-    background: #fffdfd;
-    overflow: visible!important;
-
-
-    .IconPast{
-      width: 100%;
-      height: auto;
-      @include Flex(center , center , center);
-      img{
-        width: 70px;
-        height: 70px;
-        transform: translate(0px, 0px);
-      }
-    }
-
-    .DayPast{
-      @include Flex(center , center , center);
-      width: 100%;
-      font: {size: 15px};
-    }
-
-    .TempPast{
-      @include Flex(center , center , column);
-      :nth-child(1){
-        font: {size: 25px ; weight: 600};
-      }
-    }
-
-  }
-
-
-
-
-  button{
-    width: 35px;
-    height: 35px;
-    border-radius: 100%;
-    cursor: pointer;
-  }
-
-}

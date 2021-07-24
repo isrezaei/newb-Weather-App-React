@@ -1,0 +1,22 @@
+.SunPosition{
+  @include Flex(space-around , center , row) ;
+  width: 100%;
+  height: auto;
+  transform: translateY(-30px);
+  .Sunrise{
+    @include Flex(center , center , column) ;
+    @include NeumorphismIcon;
+    width: 8rem;
+    background: #fbf4d1;
+    border-radius: 50px;
+    color: #b09433;
+    font: {
+      size: 15px;
+    };
+  }
+  .Sunset{
+    @extend .Sunrise;
+    background: #ecf8ff;
+    color: #6e98b3;
+  }
+}

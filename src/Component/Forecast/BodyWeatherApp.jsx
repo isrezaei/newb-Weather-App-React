@@ -2,7 +2,7 @@ import React from "react";
 import HeaderSearch from "../2-HeaderSearch";
 import TempIcon from "../3-Temp&Icon";
 import ToDayData from "../4-ToDayData";
-import PastDate from "../5-FooterPastInformation";
+import PastDate from "../PastData";
 
 export default function BodyWeatherApp(props){
     return (
