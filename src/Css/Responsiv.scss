@@ -128,11 +128,43 @@
     }
   }
 
-  .ParentPast{
-    @include Flex(center , center , column);
+  .ParentPast {
+    @include Flex(center, center, column);
     width: 100%;
     height: auto;
     transform: translateY(60px) !important;
+
+    .Past {
+      @include Flex(space-between, center, row);
+      width: 100%;
+      height: 10rem;
+      overflow: {
+        x: scroll;
+        y: hidden;
+      };
+    }
+
+    .ItemPast {
+      @include Flex(center, center, column);
+      width: auto;
+      height: 8rem;
+      margin: 0 .3rem!important;
+      border-radius: 12px;
+
+      .IconPast {
+        width: 100%;
+        height: 3.5rem;
+        @include Flex(center, center, center);
+
+        img {
+          width: 58px;
+          height: 58px;
+          transform: translate(0px, 0px);
+        }
+      }
+
+
+    }
   }
 
   }
