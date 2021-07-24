@@ -39,7 +39,6 @@ export default class TempIcon extends Component{
 
     render() {
 
-        console.log(this.state.Counter)
 
         const { current , current:{condition}} = this.props.Data
 

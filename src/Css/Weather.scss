@@ -265,14 +265,45 @@ body{
   @include Flex(center , center , column);
   width: 100%;
   height: auto;
+  background: crimson;
+
 
 
   .Past{
-    width: 60rem;
+    @include Flex(space-between , center , row);
+    width: 100%;
     height: 6rem;
-    background: #6e98b3;
+    background: #ffd296;
     margin-top: 2rem;
+    overflow: {
+      x: scroll;
+      y: hidden;
+    };
   }
+
+  .Past::-webkit-scrollbar-track {
+    cursor: pointer;
+  }
+  .Past::-webkit-scrollbar {
+    height: 5px;
+    cursor: pointer;
+  }
+  .Past::-webkit-scrollbar-thumb {
+    border-radius: 100px;
+    cursor: pointer;
+    background: #9eb877;
+  }
+
+  .ItemPast{
+    @include Flex(center , center , row);
+    width:5rem ;
+    height: 6rem;
+    margin: 0 .5rem;
+    padding: 0 2rem;
+    background: #c2f38a;
+  }
+
+
 
   button{
     width: 35px;
@@ -282,4 +313,3 @@ body{
   }
 
 }
-

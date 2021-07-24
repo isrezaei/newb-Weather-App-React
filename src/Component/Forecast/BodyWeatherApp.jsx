@@ -10,7 +10,7 @@ export default function BodyWeatherApp(props){
                 <HeaderSearch Data={props.ApiData} SearchAlert={props.SearchAlert}/>
                 <TempIcon Data={props.ApiData} TempIcon={props.TempIcon} RefColorTempInfo={props.RefColorTempInfo}/>
                 <ToDayData Data={props.ApiData}/>
-                <PastDate GoToUpWeatherBody={props.GoToUpWeatherBody}/>
+                <PastDate GoToUpWeatherBody={props.GoToUpWeatherBody} ForeCast={props.ForeCast}/>
         </div>
     )
 }

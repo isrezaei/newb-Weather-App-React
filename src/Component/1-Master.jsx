@@ -91,16 +91,16 @@ export default class Master extends Component {
 
     render() {
 
-        // {this.state.Data && console.log(this.state.Data)}
-        {this.state.ForeCast && console.log(this.state.ForeCast)}
-
+        {this.state.Data && console.log(this.state.Data)}
+        {this.state.ForeCast && console.log(this.state.ForeCast.data)}
 
 
         if (this.state.Data !== 400){
             return (
                 <div className={'ParentWeather'}>
                     {this.state.Data && <ForecastToday Ref={this.ForecastToday} ApiData={this.state.Data} BackToWeatherBody={this.BackToWeatherBody}/>}
-                    {this.state.Data && <BodyWeatherApp Ref={this.BodyWeatherApp} RefColorTempInfo={this.ColorTempInfo} ApiData={this.state.Data} GoToUpWeatherBody={this.GoToWeatherBody} SearchAlert={this.SearchAlert}/>}
+                    {this.state.Data && this.state.ForeCast && <BodyWeatherApp Ref={this.BodyWeatherApp} RefColorTempInfo={this.ColorTempInfo} ApiData={this.state.Data}
+                                                        ForeCast={this.state.ForeCast}   GoToUpWeatherBody={this.GoToWeatherBody} SearchAlert={this.SearchAlert}/>}
                     <SearchAlert RefSearch={this.Search} CloseSearch={this.CloseSearch} UserCityChose={this.UserCityChose} Data={this.state.Data}/>
                 </div>
             )
