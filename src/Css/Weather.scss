@@ -265,43 +265,64 @@ body{
   @include Flex(center , center , column);
   width: 100%;
   height: auto;
-  background: crimson;
-
-
+  transform: translateY(-10px);
 
   .Past{
     @include Flex(space-between , center , row);
     width: 100%;
-    height: 6rem;
-    background: #ffd296;
-    margin-top: 2rem;
+    height: auto;
     overflow: {
       x: scroll;
       y: hidden;
     };
   }
 
-  .Past::-webkit-scrollbar-track {
-    cursor: pointer;
-  }
   .Past::-webkit-scrollbar {
+    margin-top: .3rem;
     height: 5px;
-    cursor: pointer;
   }
   .Past::-webkit-scrollbar-thumb {
     border-radius: 100px;
-    cursor: pointer;
     background: #9eb877;
+    margin-top: .3rem;
   }
 
   .ItemPast{
-    @include Flex(center , center , row);
-    width:5rem ;
-    height: 6rem;
-    margin: 0 .5rem;
-    padding: 0 2rem;
-    background: #c2f38a;
+    @include Flex(center , center , column);
+    width:auto;
+    height: 10rem;
+    margin: 0 .6rem ;
+    border-radius: 50px;
+    background: #fffdfd;
+    overflow: visible!important;
+
+
+    .IconPast{
+      width: 100%;
+      height: auto;
+      @include Flex(center , center , center);
+      img{
+        width: 70px;
+        height: 70px;
+        transform: translate(0px, 0px);
+      }
+    }
+
+    .DayPast{
+      @include Flex(center , center , center);
+      width: 100%;
+      font: {size: 15px};
+    }
+
+    .TempPast{
+      @include Flex(center , center , column);
+      :nth-child(1){
+        font: {size: 25px ; weight: 600};
+      }
+    }
+
   }
+
 
 
 

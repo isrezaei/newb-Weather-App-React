@@ -1,12 +1,34 @@
 import React from "react";
 
-
+const DaysInWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
 export default function PastDate(props){
 
-    const ForeCast = props.ForeCast.data.map((Value , Index)=>{
-        return <div className={'ItemPast'}>{Value.high_temp}</div>
+    const ForeCast = props.ForeCast.data.slice(1,8).map((Value , Index)=>{
+
+        const Day = new Date(Value.datetime).getDay()
+        console.log(new Date(Value.datetime).getDay())
+
+        return (
+
+            <div key={Index} className={'ItemPast'}>
+
+                <div className={'IconPast'}>
+                    <img src={`https://www.weatherbit.io/static/img/icons/${Value.weather.icon}.png`}/>
+                </div>
+
+                <p className={'DayPast'}>{DaysInWeek[Day]}</p>
+
+                <div className={'TempPast'}>
+                    <p>{Math.round(Value.max_temp) + 4}°</p>
+                    <p>{Math.round(Value.min_temp)}°</p>
+                </div>
+
+            </div>
+        )
     })
+
+
 
 
     return(

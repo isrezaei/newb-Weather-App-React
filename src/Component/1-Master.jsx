@@ -92,7 +92,7 @@ export default class Master extends Component {
     render() {
 
         {this.state.Data && console.log(this.state.Data)}
-        {this.state.ForeCast && console.log(this.state.ForeCast.data)}
+        {this.state.ForeCast && console.log(this.state.ForeCast.data.slice(1,8))}
 
 
         if (this.state.Data !== 400){
