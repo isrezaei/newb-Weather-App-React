@@ -47,8 +47,14 @@
     .TempPast{
       @include Flex(center , center , column);
       :nth-child(1){
+        color: rgba(0,0,0,0.6);
         font: {size: 25px ; weight: 600};
       }
+      :nth-child(2){
+        color: rgba(0,0,0,0.6);
+        font: {size: 15px ; weight: 600};
+      }
+
     }
   }
 
@@ -61,6 +67,12 @@
     outline: none;
     border: none;
     background: #6e98b3;
+
+    img{
+      width: 30px;
+      height: 30px;
+    }
+
   }
 
 }

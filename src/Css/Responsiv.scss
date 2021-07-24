@@ -24,7 +24,7 @@
   transform: translate(-50% , -50%);
 }
 
-@media screen and (min-width: 320px) and (max-width: 407px){
+@media screen and (min-width: 320px) and (max-width: 410px){
 
   .ParentWeather{
     @include Centerin;
@@ -101,7 +101,7 @@
     @include Flex(space-around , center , row) ;
     width: 100%;
     height: auto;
-    transform: translateY(-10px) !important;}
+    transform: translateY(5px) !important;}
 
   .SearchAlert {
     width: 100%;
@@ -132,7 +132,7 @@
     @include Flex(center, center, column);
     width: 100%;
     height: auto;
-    transform: translateY(60px) !important;
+    transform: translateY(50px) !important;
 
     .Past {
       @include Flex(space-between, center, row);

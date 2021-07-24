@@ -33,7 +33,9 @@ export default function PastDate(props){
             <div className={'Past'}>
                 {ForeCast}
             </div>
-            <button onClick={function (){return props.GoToUpWeatherBody()}}>UP</button>
+            <button onClick={function (){return props.GoToUpWeatherBody()}}>
+                <img src='../Icon/icons8-double-down.gif'/>
+            </button>
         </div>
     )
 }
