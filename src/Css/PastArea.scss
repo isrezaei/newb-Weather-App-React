@@ -41,17 +41,18 @@
     .DayPast{
       @include Flex(center , center , center);
       width: 100%;
-      font: {size: 15px};
+      font: {size: 15px ; weight: bold};
+      color: rgba(0,0,0,0.4);
     }
 
     .TempPast{
       @include Flex(center , center , column);
       :nth-child(1){
-        color: rgba(0,0,0,0.6);
+        color: rgba(0,0,0,0.4);
         font: {size: 25px ; weight: 600};
       }
       :nth-child(2){
-        color: rgba(0,0,0,0.6);
+        color: rgba(0,0,0,0.4);
         font: {size: 15px ; weight: 600};
       }
 
