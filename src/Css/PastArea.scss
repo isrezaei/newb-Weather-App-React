@@ -8,7 +8,6 @@
     @include Flex(space-between , center , row);
     width: 100%;
     height: 10rem;
-
     overflow: {
       x: scroll;
       y: hidden;
@@ -33,8 +32,8 @@
       height: 3.5rem;
       @include Flex(center , center , center);
       img{
-        width: 70px;
-        height: 70px;
+        width: 58px;
+        height: 58px;
         transform: translate(0px, 0px);
       }
     }
