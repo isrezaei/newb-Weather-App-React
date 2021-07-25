@@ -1,6 +1,6 @@
 import React, {Component, createRef} from "react";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
-import '../Css/Weather.css'
+import '../Css/MianBody.css'
 import Loader from "react-loader-spinner";
 import GetData from "../Server/ServerApi";
 import ForeCast from "../Server/ForeCast";
