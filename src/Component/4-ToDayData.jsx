@@ -12,7 +12,7 @@ export default function ToDayData(props){
                     <div>
                         <img src="../Icon/icons8-temperature.gif"/>
                     </div>
-                    <p>{`${Math.round(forecastday[0].day.mintemp_c)}°`}-{`${Math.round(forecastday[0].day.maxtemp_c)}°`}</p>
+                    <p>{`${Math.round(forecastday[0].day.mintemp_c)}°`} | {`${Math.round(forecastday[0].day.maxtemp_c)}°`}</p>
                 </div>
 
                 <div className={'WindSpeed'}>

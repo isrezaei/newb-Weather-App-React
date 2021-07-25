@@ -9,7 +9,6 @@
   .Temp{
     width: 5rem;
     height: 6rem;
-    //background: red;
     @include Flex(center , center , column);
 
     div{
@@ -26,8 +25,10 @@
       border-radius: 100%;
     }
     p{
+      color: rgba(0,0,0,0.5);
       font: {
         size: 15px;
+        weight: bold;
       };
       margin: .25rem 0;
     }
