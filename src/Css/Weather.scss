@@ -30,12 +30,11 @@ time, mark, audio, video , input {
 @import "TempInfo";
 @import "Header";
 @import "NotFound";
+@import "Spinner";
 @import "Responsiv";
 
 
-@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Otomanopee+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
 
 
@@ -66,9 +65,7 @@ time, mark, audio, video , input {
 }
 
 body{
-  font-family: 'PT Sans', sans-serif;
-  font-family: 'Otomanopee One', sans-serif;
-  font-family: 'Ubuntu', sans-serif;
+;
   font-family: 'Josefin Sans', sans-serif;
   background: #e3e3e3;
 }

@@ -18,23 +18,26 @@
 
 
 .NotFound{
-    @include NeumorphismBody;
-    @include Centerin;
-    width: 20rem;
-    height: 40rem;
-    position: absolute;
-    transition: .5s;
-    overflow: hidden;
+  @include NeumorphismBody;
+  @include Centerin;
+  width: 23rem;
+  height: 40rem;
+  position: absolute;
+  transition: .5s;
+  overflow: hidden;
+  border-radius: 15px;
 
   .Image404{
+    @include Flex(center , center , center);
     width: 100%;
     height: auto;
-    margin-top: 6rem;
+    margin-top: 6rem ;
 
     img{
-      width: 100%;
+      width: 95%;
       height: 262px;
       transform: scale(1.3);
+
     }
   }
 
@@ -46,7 +49,7 @@
     margin-top: 3rem;
   }
   p{
-    color: #565656;
+    color: #b0c3a4;
     text-align: center;
     font: {
       size: 18px;
@@ -55,7 +58,7 @@
   }
 
   b{
-    color: #ff7043;
+    color: #f8987a;
     font: {
       weight: 600;
       size: 25px;
@@ -68,7 +71,7 @@
     height: 40px;
     margin-top: .8rem;
     background: white;
-    border: 3px solid #7dd0d7;
+    border: 2px solid #b0c3a4;
     outline: none;
     border-radius: 100%;
     cursor: pointer;

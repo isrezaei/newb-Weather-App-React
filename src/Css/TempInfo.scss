@@ -12,7 +12,7 @@
     height: auto;
     margin-top: 1%;
     @include Flex(space-around , center , row);
-    color: rgba(0, 0, 0, 0.4);
+
 
     .Icone {
       @include Flex(center , center , row);
@@ -24,12 +24,14 @@
     .Info{
       @include Flex(center , center , column);
       :nth-child(1){
+        color: rgba(0, 0, 0, 0.5);
         font: {
           size: 45px;
         };
       }
 
       :nth-child(2){
+        color: rgba(0, 0, 0, 0.3);
         font: {
           size: 20px;
           weight: 600;

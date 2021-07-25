@@ -1,0 +1,6 @@
+.Spinner{
+  width: 100%;
+  height: auto;
+  @include Centerin();
+ @include Flex(center , center , row)
+}

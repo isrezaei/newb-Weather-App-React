@@ -10,7 +10,7 @@ export default function NotFound(props){
 
             <div className={'Text404'}>
 
-                <p>We could not find </p>
+                <p>Oops ! We could not find </p>
                 <b>{props.UserChose}</b>
                 <button onClick={()=> window.location.reload()}>
                     <img src='../Icon/Reload.gif'/>
