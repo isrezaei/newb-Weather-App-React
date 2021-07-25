@@ -45,46 +45,20 @@ export default class Master extends Component {
         return null
     }
 
-
-    ShowLoacl = () => {
-        let Local =  JSON.parse(localStorage.getItem('City'))
-        if (Local !== null && this.state.UserChose !== '' && this.state.UserChose !== undefined ){
-            this.setState({
-                UserChose : Local
-            })
-        }
-    }
-
     componentDidMount(){
 
-        // setInterval(()=>{
-
+        setInterval(()=>{
         GetData(this.state.UserChose).then(Data => this.setState({Data}))
+        },3000)
         ForeCast(this.state.LatLong).then(ForeCast => this.setState({ForeCast}))
 
-        // },1000)
-
-        this.ShowLoacl()
 
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
         if (prevState.UserChose !== this.state.UserChose){
-
             GetData(this.state.UserChose).then(Data => this.setState({Data}))
             ForeCast(this.state.LatLong).then(ForeCast => this.setState({ForeCast}))
-
-            let Local
-            if (localStorage.getItem('City') == null){
-                Local = []
-            }else {
-                Local = JSON.parse(localStorage.getItem('City')).splice(2 , 2)
-            }
-            return(
-                Local.push(this.state.UserChose),
-                    localStorage.setItem('City' , JSON.stringify(Local))
-            )
-
         }
         return null
     }
