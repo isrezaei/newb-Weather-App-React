@@ -3,7 +3,7 @@ async function ForeCast(City){
     const ForeCast = await fetch(`https://weatherbit-v1-mashape.p.rapidapi.com/forecast/daily?lat=${City.lat}&lon=${City.lon}`, {
         "method": "GET",
         "headers": {
-            "x-rapidapi-key": "3cec8d8c46msha90ce5b12fd7ab4p168338jsn8fdd68f47d24",
+            "x-rapidapi-key": "b8227d29d9mshe7a875bea2f18a4p17312cjsnb03b9b259193",
             "x-rapidapi-host": "weatherbit-v1-mashape.p.rapidapi.com"
         }
     })
@@ -13,3 +13,8 @@ async function ForeCast(City){
 }
 
 export default ForeCast
+
+
+//${City.lon}
+//${City.lat}
+// `https://weatherbit-v1-mashape.p.rapidapi.com/forecast/daily?lat=${City.lat}&lon=${City.lon}`

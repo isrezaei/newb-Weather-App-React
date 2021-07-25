@@ -17,9 +17,10 @@ export default class Master extends Component {
         this.state = {
             Data : null ,
             ForeCast : null,
-            UserChose : 'Tehran',
             prevProps : '',
-            LatLong : {lat : '35.73',  lon : '51.33'}
+            UserChose :'Tehran',
+            LatLong : {lat : '35.73',  lon : '51.33'},
+
         }
 
         this.ForecastToday = React.createRef()
@@ -41,18 +42,29 @@ export default class Master extends Component {
 
             }
         }
+        return null
     }
 
 
-
+    ShowLoacl = () => {
+        let Local =  JSON.parse(localStorage.getItem('City'))
+        if (Local !== null && this.state.UserChose !== '' && this.state.UserChose !== undefined ){
+            this.setState({
+                UserChose : Local
+            })
+        }
+    }
 
     componentDidMount(){
+
         // setInterval(()=>{
 
         GetData(this.state.UserChose).then(Data => this.setState({Data}))
         ForeCast(this.state.LatLong).then(ForeCast => this.setState({ForeCast}))
 
         // },1000)
+
+        this.ShowLoacl()
 
     }
 
@@ -61,6 +73,17 @@ export default class Master extends Component {
 
             GetData(this.state.UserChose).then(Data => this.setState({Data}))
             ForeCast(this.state.LatLong).then(ForeCast => this.setState({ForeCast}))
+
+            let Local
+            if (localStorage.getItem('City') == null){
+                Local = []
+            }else {
+                Local = JSON.parse(localStorage.getItem('City')).splice(2 , 2)
+            }
+            return(
+                Local.push(this.state.UserChose),
+                    localStorage.setItem('City' , JSON.stringify(Local))
+            )
 
         }
         return null
@@ -97,8 +120,6 @@ export default class Master extends Component {
             this.Search.current.style.zIndex ='-1',
                 this.Search.current.style.opacity ='0'
         )
-
-        this.LocalStorage()
     }
 
     CloseSearch = () => {
@@ -108,25 +129,14 @@ export default class Master extends Component {
         )
     }
 
-    LocalStorage= ()=>{
-        let Local
-        if (localStorage.getItem('City') == null){
-            Local = []
-        }else {
-            Local = JSON.parse(localStorage.getItem('City'))
-        }
-        return(
-            Local.push(this.state.UserChose),
-                localStorage.setItem('City' , JSON.stringify(Local))
-        )
-    }
-
 
 
 
     render() {
 
-        {this.state.Data && console.log(this.state.Data.location)}
+        console.log(this.state.UserChose)
+
+        {this.state.Data && console.log(this.state.LatLong)}
         {this.state.ForeCast && console.log(this.state.ForeCast)}
 
 
@@ -177,3 +187,5 @@ export default class Master extends Component {
         }
     }
 }
+
+//DOMContentLoaded
