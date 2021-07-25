@@ -19,8 +19,6 @@ export default class NowTemp extends Component{
                     Counter : state.Counter < 11 ? state.Counter + 1 : state.Counter = 0
                 }
             })
-
-
         }.bind(this),1000)
     }
 
@@ -29,7 +27,6 @@ export default class NowTemp extends Component{
             this.props.RefColorTempInfo.current.style.background = `${Colors[this.state.Counter]}`
         }
     }
-
 
     render() {
         const { current , current:{condition}} = this.props.Data

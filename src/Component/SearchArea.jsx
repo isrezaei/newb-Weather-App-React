@@ -1,6 +1,6 @@
 import React , {Component} from "react";
 
-export default class SearchAlert extends Component{
+export default class SearchArea extends Component{
     constructor(props) {
         super(props);
 
@@ -9,9 +9,7 @@ export default class SearchAlert extends Component{
         }
     }
 
-
     RemoveFirstTextInput = () =>{
-
         this.setState({
             Input : ''
         })
@@ -24,30 +22,23 @@ export default class SearchAlert extends Component{
     }
 
     SearchButton = () =>{
-
         if (this.state.Input !== ''){
             this.props.UserCityChose(this.state.Input)
         }
     }
 
-
     render() {
 
         return (
             <div ref={this.props.RefSearch} className={'SearchAlert'}>
-
                 <div onClick={()=> this.props.CloseSearch()} className={'Close'}>
                     <img src="https://img.icons8.com/color/48/000000/undo.png"/>
                 </div>
-
                 <p>Enter Your City</p>
-
                 <input spellCheck={false} onClick={this.RemoveFirstTextInput} onChange={this.HandelChange} value={this.state.Input}/>
-
-                    <div onClick={this.SearchButton}>
-                        <img src='../Icon/icons8-search%20(1).gif'/>
-                    </div>
-
+                <div onClick={this.SearchButton}>
+                    <img src='../Icon/icons8-search%20(1).gif'/>
+                </div>
             </div>
         )
     }

@@ -32,7 +32,7 @@ export default class Header extends Component{
                 </div>
 
                 <div>
-                    <div onClick={()=> this.props.SearchAlert()} className={'Search'}>
+                    <div onClick={()=> this.props.SearchArea()} className={'Search'}>
                         <img src="https://img.icons8.com/color/96/000000/search--v1.png"/>
                     </div>
                 </div>

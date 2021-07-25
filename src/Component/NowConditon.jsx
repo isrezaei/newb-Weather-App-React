@@ -7,7 +7,6 @@ export default function NowConditon(props){
     return(
         <div>
             <div className={'ToDayData'}>
-
                 <div className={'Temp'}>
                     <div>
                         <img src="../Icon/icons8-temperature.gif"/>

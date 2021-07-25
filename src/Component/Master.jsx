@@ -6,7 +6,7 @@ import GetData from "../Server/ServerApi";
 import ForeCast from "../Server/ForeCast";
 import ForecastToday from "./ForecastToday";
 import BodyWeatherApp from "./BodyWeatherApp";
-import SearchAlert from "./SearchAlert";
+import SearchArea from "./SearchArea";
 import NotFound from "./NotFound";
 
 
@@ -46,13 +46,10 @@ export default class Master extends Component {
     }
 
     componentDidMount(){
-
         setInterval(()=>{
         GetData(this.state.UserChose).then(Data => this.setState({Data}))
         },3000)
         ForeCast(this.state.LatLong).then(ForeCast => this.setState({ForeCast}))
-
-
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
@@ -77,7 +74,7 @@ export default class Master extends Component {
         )
     }
 
-    SearchAlert = () =>{
+    SearchArea = () =>{
         return (
             this.Search.current.style.zIndex ='1',
                 this.Search.current.style.opacity ='1'
@@ -107,21 +104,12 @@ export default class Master extends Component {
 
 
     render() {
-
-        console.log(this.state.UserChose)
-
-        {this.state.Data && console.log(this.state.LatLong)}
-        {this.state.ForeCast && console.log(this.state.ForeCast)}
-
-
-
         if (this.state.Data !== 400){
             return (
 
                 <div className={'ParentWeather'}>
                     <>
                         {this.state.Data && this.state.ForeCast ?
-
 
                             <>
                                 <ForecastToday Ref={this.ForecastToday}
@@ -133,9 +121,9 @@ export default class Master extends Component {
                                                 ApiData={this.state.Data}
                                                 ForeCast={this.state.ForeCast}
                                                 GoToUpWeatherBody={this.GoToWeatherBody}
-                                                SearchAlert={this.SearchAlert}/>
+                                                SearchArea={this.SearchArea}/>
 
-                                <SearchAlert RefSearch={this.Search}
+                                <SearchArea RefSearch={this.Search}
                                              CloseSearch={this.CloseSearch}
                                              UserCityChose={this.UserCityChose}
                                              Data={this.state.Data}/>
