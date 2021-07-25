@@ -34,8 +34,9 @@ time, mark, audio, video , input {
 
 
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Otomanopee+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 
-//--------
 
 @mixin Flex($JustifyContent : center , $AlignItem : center , $Direction){
   display: flex;
@@ -65,6 +66,8 @@ time, mark, audio, video , input {
 
 body{
   font-family: 'PT Sans', sans-serif;
+  font-family: 'Otomanopee One', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   background: #e3e3e3;
 }
 
@@ -72,16 +75,17 @@ body{
 .ParentWeather{
   @include Centerin;
   @include NeumorphismBody;
-  width: 20rem;
+  width: 23rem;
   height: 40rem;
   overflow: hidden;
+  border-radius: 15px;
 }
 
 .BodyWeatherApp{
   @include NeumorphismBody;
   @include Centerin;
-  width: 20rem;
-  height: 40rem;
+  width: 100%;
+  height: 100%;
   position: absolute;
   box-shadow: none;
   transition: .5s;

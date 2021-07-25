@@ -1,6 +1,6 @@
 import React , {Component} from 'react'
 
-let Colors = ['#9eb877' , '#809f98' , '#b398e0' , '#b4de7f' , '#80b3ea' , '#a3d9c3']
+let Colors = ['#ffcdd2' , '#e1bee7' , '#c5cae9' , '#b3e5fc' , '#e2c6c7' , '#ffab91' , '#80cbc4' , '#a0b7e5' , '#89d9c0' , '#88f3ba' , '#f5a0a0' , '#b1d27d']
 
 export default class TempIcon extends Component{
     constructor(props) {
@@ -19,12 +19,12 @@ export default class TempIcon extends Component{
 
             this.setState((state) =>{
                 return{
-                    Counter : state.Counter < 7 ? state.Counter + 1 : state.Counter = 0
+                    Counter : state.Counter < 11 ? state.Counter + 1 : state.Counter = 0
                 }
             })
 
 
-        }.bind(this),600)
+        }.bind(this),1000)
 
 
     }
