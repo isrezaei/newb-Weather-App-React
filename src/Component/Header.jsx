@@ -1,7 +1,7 @@
 import React ,{Component} from 'react'
 
 
-export default class HeaderSearch extends Component{
+export default class Header extends Component{
     constructor() {
         super()
 

@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ToDayData(props){
+export default function NowConditon(props){
 
     const {forecast:{forecastday} , current} = props.Data
 

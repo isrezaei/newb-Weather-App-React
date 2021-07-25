@@ -4,8 +4,8 @@ import '../Css/MianBody.css'
 import Loader from "react-loader-spinner";
 import GetData from "../Server/ServerApi";
 import ForeCast from "../Server/ForeCast";
-import ForecastToday from "./Forecast/ForecastToday";
-import BodyWeatherApp from "./Forecast/BodyWeatherApp";
+import ForecastToday from "./ForecastToday";
+import BodyWeatherApp from "./BodyWeatherApp";
 import SearchAlert from "./SearchAlert";
 import NotFound from "./NotFound";
 

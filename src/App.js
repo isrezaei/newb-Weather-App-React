@@ -1,5 +1,5 @@
 import React from 'react'
-import Master from "./Component/1-Master";
+import Master from "./Component/Master";
 
 function App() {
   return <Master/>
