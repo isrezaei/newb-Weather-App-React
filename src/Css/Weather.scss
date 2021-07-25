@@ -22,10 +22,17 @@ time, mark, audio, video , input {
 //--------
 @import "ForecastToday";
 @import "SearchAlert";
+
+
+@import "SunSetAndRise";
+@import "ToDayData";
+@import "PastArea";
+@import "TempInfo";
+@import "Header";
 @import "NotFound";
 @import "Responsiv";
-@import "SunSetAndRise";
-@import "PastArea";
+
+
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
 
 //--------
@@ -56,14 +63,11 @@ time, mark, audio, video , input {
   transform: translate(-50% , -50%);
 }
 
-//--------
-
 body{
   font-family: 'PT Sans', sans-serif;
   background: #e3e3e3;
 }
 
-//--------
 
 .ParentWeather{
   @include Centerin;
@@ -72,8 +76,6 @@ body{
   height: 40rem;
   overflow: hidden;
 }
-
-//--------
 
 .BodyWeatherApp{
   @include NeumorphismBody;
@@ -84,159 +86,7 @@ body{
   box-shadow: none;
   transition: .5s;
   overflow: hidden;
-
 }
 
-//--------
-
-.Headersearch{
-  @include Flex(space-between , center , row);
-  width: 100%;
-  height: 5rem;
-  margin: {left: auto ; right: auto ; top: .5rem ; bottom: 0;};
-  padding: 0 1rem;
-  box-sizing : border-box;
-  position: absolute;
-  z-index: 1;
-
-  .City{
-    color: rgba(0, 0, 0, 0.6);
-    font: {
-      size: 30px;
-    };
-  }
-  .Time{
-    color: rgba(0, 0, 0, 0.6);
-    font: {
-      size: 17px;
-    };
-  }
-.Search{
-  @include Flex(center , center , row);
-  width: 35px;
-  height: 35px;
-  border-radius: 100%;
-  cursor: pointer;
-
-  img{
-    width: 30px;
-    height: 30px;
-  }
-
-}
-
-}
-
-//--------
-
-.TempInfo{
-  width: 100%;
-  height: 19rem;
-  margin: auto;
-  background: #9eb877;
-  transition: 4s;
-  clip-path: circle(87.5% at 50% 0);
-  @include Flex(center , center , row);
-
-  .IconeTemp{
-    width: 90%;
-    height: auto;
-    margin-top: 1%;
-    //background: #d6d6f6;
-    @include Flex(space-around , center , row);
-    color: rgba(0, 0, 0, 0.6);
-
-    .Icone {
-      @include Flex(center , center , row);
-      img{
-        transform: scale(1.5);
-      }
-    }
-
-    .Info{
-      @include Flex(center , center , column);
-      :nth-child(1){
-        font: {
-          size: 45px;
-        };
-      }
-
-      :nth-child(2){
-        font: {
-          size: 20px;
-          weight: 600;
-        };
-      }
-    }
-  }
-}
-
-//--------
-
-.ToDayData{
-  width: 100%;
-  height: auto;
-  margin: auto;
-  //background: gold;
-  transform: translateY(-45px);
-  @include Flex(space-around , center , row);
-
-  .Temp{
-    width: 5rem;
-    height: 6rem;
-    //background: red;
-    @include Flex(center , center , column);
-
-    div{
-      width: 50px;
-      height: 50px;
-      border-radius: 100%;
-      border: 3px solid cornflowerblue;
-      @include Flex(center , center , row);
-      @include NeumorphismIcon
-    }
-    img{
-      width: 40px;
-      height: 40px;
-      border-radius: 100%;
-    }
-    p{
-      font: {
-        size: 15px;
-      };
-      margin: .25rem 0;
-    }
-  }
-
-  .WindSpeed{
-    @extend .Temp;
-    transform: translateY(-20px);
-
-    img{
-      width: 70px;
-      height: 70px;
-      border-radius: 50%;
-      background: #ffffff;
-      border: 3px solid cornflowerblue;
-    }
-    p{
-      font: {
-        size: 15px;
-      };
-      margin: .25rem 0;
-    }
-
-
-  }
-  .Rainy{
-   @extend .Temp;
-  }
-}
-
-//--------
-
-
-
-//--------
 
 

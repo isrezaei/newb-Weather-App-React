@@ -34,7 +34,7 @@ export default function PastDate(props){
                 {ForeCast}
             </div>
             <button onClick={function (){return props.GoToUpWeatherBody()}}>
-                <img src='../Icon/icons8-double-down.gif'/>
+                <img src="https://img.icons8.com/color/48/000000/double-down--v2.png"/>
             </button>
         </div>
     )

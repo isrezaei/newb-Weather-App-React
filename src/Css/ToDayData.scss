@@ -1,0 +1,59 @@
+.ToDayData{
+  width: 100%;
+  height: auto;
+  margin: auto;
+  //background: gold;
+  transform: translateY(-45px);
+  @include Flex(space-around , center , row);
+
+  .Temp{
+    width: 5rem;
+    height: 6rem;
+    //background: red;
+    @include Flex(center , center , column);
+
+    div{
+      width: 50px;
+      height: 50px;
+      border-radius: 100%;
+      border: 3px solid cornflowerblue;
+      @include Flex(center , center , row);
+      @include NeumorphismIcon
+    }
+    img{
+      width: 40px;
+      height: 40px;
+      border-radius: 100%;
+    }
+    p{
+      font: {
+        size: 15px;
+      };
+      margin: .25rem 0;
+    }
+  }
+
+  .WindSpeed{
+    @extend .Temp;
+    transform: translateY(-20px);
+
+    img{
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 3px solid cornflowerblue;
+    }
+    p{
+      font: {
+        size: 15px;
+      };
+      margin: .25rem 0;
+    }
+
+
+  }
+  .Rainy{
+    @extend .Temp;
+  }
+}

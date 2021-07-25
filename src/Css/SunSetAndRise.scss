@@ -1,3 +1,10 @@
+@mixin NeumorphismIcon(){
+  background: linear-gradient(145deg, #ffffff, #f3f3f3);
+  box-shadow:  5px 5px 15px #c3c3c3,
+  -5px -5px 15px #ffffff;
+}
+
+
 .SunPosition{
   @include Flex(space-around , center , row) ;
   width: 100%;
